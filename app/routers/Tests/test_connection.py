@@ -8,7 +8,6 @@ router = APIRouter()
 async def test_connection(db: AsyncIOMotorDatabase = Depends(get_database)):
     try:
         server_info = await db.command("ping")
-        raise Exception
         return {
             "server_info": server_info
         }
